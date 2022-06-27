@@ -9,7 +9,13 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
+function getEmailDomain(email) {
+   const indexOfApestaartje = email.indexOf("@");
+   const domain = email.substring(indexOfApestaartje + 1);
+   return domain;
+}
 
+console.log(getEmailDomain("t.mellink@novi.nl"));
 
 
 /* Opdracht  2 */
