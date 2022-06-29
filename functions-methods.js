@@ -17,6 +17,8 @@ function getEmailDomain(email) {
 
 console.log(getEmailDomain("t.mellink@novi.nl"));
 
+
+//Andere optie is:
 /*function getEmailDomain(email) {
    return email.substring(email.indexOf("@") +1);
 }
@@ -34,8 +36,7 @@ console.log(getEmailDomain("a.wiersma@outlook.com"));*/
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
 function typeOfEmail(email) {
-   const indexOfApestaartje = email.indexOf("@");
-   const domain = email.substring(indexOfApestaartje + 1);
+   const domain = getEmailDomain(email);
 
    if (domain === "novi-education.nl") {
       console.log("Student");
@@ -64,3 +65,22 @@ typeOfEmail("a.wiersma@outlook.com");
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+function checkEmailValidity(email) {
+   const containsApestaartje = email.includes("@");
+   const containsComma = email.includes(",");
+   const endsWithDot = email.endsWith(".");
+
+   if (containsApestaartje && !containsComma && !endsWithDot) {
+      console.log("true");
+   } else {
+      console.log("false");
+   }
+}
+
+checkEmailValidity("n.eeken@novi.nl");
+checkEmailValidity("tessmellink@novi.nl");
+checkEmailValidity("n.eekenanovi.nl");
+checkEmailValidity("n.eeken@novinl.");
+checkEmailValidity("tessmellink@novi,nl");
+
