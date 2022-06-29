@@ -17,6 +17,7 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // ---- Verwachte uitkomst: 6
 
 
+
 // ------- Uitwerking 1a ---------------------------------------------------
 
 //Pseudo code:
@@ -71,6 +72,23 @@ cumLaude([8, 9, 4, 6, 10]);
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
+// ------- Uitwerking 2a ---------------------------------------------------
+
+//* Declareer een variabele voor het totaal van de waarden van de array
+//* Declareer een variabele voor het gemiddelde: totaal gedeeld door .lenght property
+//* Declareer een for-loop om de array te checken
+//* Console log het gemiddelde
+
+let sum = 0;
+
+for (const number of grades) {
+    sum += number;
+}
+
+const average = sum / grades.length;
+
+console.log(average);
+
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -81,6 +99,19 @@ cumLaude([8, 9, 4, 6, 10]);
 // averageGrade(grades) geeft 6.642857142857143
 // averageGrade([6, 4, 5]) geeft xxxx
 // averageGrade([8, 9, 4, 6, 10]) geeft xxxx
+
+function averageGrade(grades) {
+    let sum = 0;
+    for (const number of grades) {
+        sum += number;
+    }
+    const average = (sum / grades.length).toFixed(2);
+    console.log(average);
+}
+
+averageGrade(grades);
+averageGrade([6, 4, 5]);
+averageGrade([8, 9, 4, 6, 10]);
 
 
 /* 2c: Afronden op twee decimalen */
