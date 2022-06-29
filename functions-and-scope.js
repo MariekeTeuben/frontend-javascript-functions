@@ -17,6 +17,23 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // ---- Verwachte uitkomst: 6
 
 
+// ------- Uitwerking 1a ---------------------------------------------------
+
+//Pseudo code:
+//* Declareer een for-loop om de array te checken
+//* Maak gebruik van de .lenght property
+//* Geef de conditie mee waarop gechecked moet worden
+//* Declareer een count variabele om de cum laude cijfers in bij te houden
+
+let output = 0;
+for (let i = 0; i < grades.length; i++) {
+    if (grades[i] >= 8) {
+    output= output + 1;
+    }
+}
+console.log (output);
+
+
 /*  1b: Omschrijven tot een herbruikbare functie   */
 // Schrijf een functie genaamd cumLaude, die een array van cijfers verwacht (zoals grades) en het aantal Cum laude studenten teruggeeft. Gebruik hiervoor jouw antwoord van 1a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array met eindcijfers willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
@@ -27,7 +44,19 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
+function cumLaude(grades) {
+    let output = 0;
+    for (let i = 0; i < grades.length; i++) {
+        if (grades[i] >= 8) {
+            output= output + 1;
+        }
+    }
+    console.log (output);
+}
 
+cumLaude(grades);
+cumLaude([6, 4, 5]);
+cumLaude([8, 9, 4, 6, 10]);
 
 
 /* Opdracht  2: Gemiddeld cijfer */
